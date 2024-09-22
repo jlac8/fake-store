@@ -1,9 +1,20 @@
-export function setupTimer(element) {
-  let counter = 0;
-  const setCounter = (count) => {
-    counter = count;
-    element.innerHTML = `count is ${counter}`;
-  };
-  element.addEventListener("click", () => setCounter(counter + 1));
-  setCounter(0);
+export function setupTimer(timerElement, onFinish) {
+  const duration = Math.floor(Math.random() * (180 - 60 + 1) + 60);
+  let timeLeft = duration;
+
+  const timerInterval = setInterval(() => {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `Tiempo restante: ${minutes}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      onFinish();
+      timerElement.textContent = "Tiempo agotado";
+    }
+
+    timeLeft--;
+  }, 1000);
 }

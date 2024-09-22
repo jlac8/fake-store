@@ -1,4 +1,5 @@
 import { setupTimer } from "./timer.js";
+import { disableButton } from "./disable.js";
 
 export function createProductCard(product) {
   const card = document.createElement("div");
@@ -32,7 +33,7 @@ export function createProductCard(product) {
 
   card.append(img, title, price, category, description, timer, detailBtn);
 
-  setupTimer(timer, detailBtn);
+  setupTimer(timer, () => disableButton(detailBtn));
 
   return card;
 }
