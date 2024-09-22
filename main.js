@@ -1,4 +1,3 @@
-import "./style.css";
 import { fetchProducts } from "./modules/fetch.js";
 
 document.querySelector("#app").innerHTML = `
