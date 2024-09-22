@@ -1,5 +1,5 @@
 import "./style.css";
-import { fetchProducts } from "./modules/fetch.js"; // Solo importa fetchProducts
+import { fetchProducts } from "./modules/fetch.js";
 
 document.querySelector("#app").innerHTML = `
   <header>
