@@ -5,14 +5,14 @@ export function setupTimer(timerElement, onFinish) {
   const timerInterval = setInterval(() => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    timerElement.textContent = `Tiempo restante: ${minutes}:${seconds
+    timerElement.textContent = `Time left: ${minutes}:${seconds
       .toString()
       .padStart(2, "0")}`;
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       onFinish();
-      timerElement.textContent = "Tiempo agotado";
+      timerElement.textContent = "Time out";
     }
 
     timeLeft--;

@@ -13,10 +13,10 @@ export function createProductCard(product) {
   title.textContent = product.title;
 
   const price = document.createElement("p");
-  price.textContent = `Precio: $${product.price}`;
+  price.textContent = `Price: $${product.price}`;
 
   const category = document.createElement("p");
-  category.textContent = `Categoría: ${product.category}`;
+  category.textContent = `Category: ${product.category}`;
 
   const description = document.createElement("p");
   description.textContent =
