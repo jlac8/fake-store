@@ -26,13 +26,13 @@ export function createProductCard(product) {
   const timer = document.createElement("p");
   timer.className = "timer";
 
-  const buyButton = document.createElement("button");
-  buyButton.textContent = "Comprar";
-  buyButton.className = "product-card__button";
+  const detailBtn = document.createElement("button");
+  detailBtn.textContent = "Go to Detail";
+  detailBtn.className = "product-card__button";
 
-  card.append(img, title, price, category, description, timer, buyButton);
+  card.append(img, title, price, category, description, timer, detailBtn);
 
-  setupTimer(timer, buyButton);
+  setupTimer(timer, detailBtn);
 
   return card;
 }
