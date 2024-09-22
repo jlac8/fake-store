@@ -1,5 +1,5 @@
 import "./style.css";
-import { setupTimer } from "./modules/timer.js";
+import { fetchProducts } from "./modules/fetchProducts.js"; // Solo importa fetchProducts
 
 document.querySelector("#app").innerHTML = `
   <header>
@@ -25,3 +25,7 @@ document.querySelector("#app").innerHTML = `
     <p>&copy; 2024 Fake Store. All rights reserved.</p>
   </footer>
 `;
+
+const productsContainer = document.getElementById("products-container");
+
+fetchProducts(productsContainer);
