@@ -1,4 +1,4 @@
 export function disableButton(button) {
-  button.disabled = true;
   button.textContent = "Not Available";
+  button.className = "product-card__button__disabled";
 }
